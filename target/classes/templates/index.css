@@ -1,0 +1,26 @@
+* {
+ margin:0;
+ padding:0;
+ box-sizing: border-box;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-end;
+  margin-top: 20rem;
+}
+
+.img {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  align-content: flex-end;
+  margin-top: 20rem;
+}
+
