@@ -22,6 +22,11 @@ public class HackloweenController {
         return "index";
     }
     
+    @GetMapping("/quizz1")
+    public String quizz1() {
+        return "quizz1";
+    }
+    
     @GetMapping("/test")
     public String test() {
         return "test";
