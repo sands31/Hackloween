@@ -22,6 +22,21 @@ public class HackloweenController {
         return "index";
     }
     
+    @GetMapping("/test")
+    public String test() {
+        return "test";
+    }
+    
+    @GetMapping("/loose")
+    public String loose() {
+        return "loose";
+    }
+    
+    @GetMapping("/win")
+    public String win() {
+        return "win";
+    }
+    
     @GetMapping("/movies")
     public String movies(Model model, @RequestParam Long id) {
 

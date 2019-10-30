@@ -6,7 +6,16 @@
 </head>
 <body>
 <h1 th:text="${monsterInfos.name}">$name</h1>
-<h3 th:text="${monsterInfos.special}">$gender</h3>
-<a href="/">Go back</a>
+<ul>
+	<li th:text="${monsterInfos.id}">id</li>
+	<li th:text="${monsterInfos.level}">level</li>
+	<li th:text="${monsterInfos.attack}">attack</li>
+	<li th:text="${monsterInfos.defense}">defense</li>
+	<li th:text="${monsterInfos.special}">special</li>
+	<li th:text="${monsterInfos.description}">description</li>
+</ul>
+<div><img th:src="@{${monsterInfos.picture}}"/></div>
+
+<a href="/test">Go back</a>
 </body>
 </html>

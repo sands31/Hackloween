@@ -5,11 +5,11 @@ public class Movie {
 	private int id;
 	private String title;
 	private int year;
+	private String director;
 	private String country;
 	private String posterUrl;
 	private String createdAt;
 	private String updatedAt;
-	private String director;
 	/*
 	 {"id":3,"title":"Scream_2",
 	 "director":"Wes_Craven","year":1997,"country":"United_States",
