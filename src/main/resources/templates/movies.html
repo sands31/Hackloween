@@ -6,7 +6,13 @@
 </head>
 <body>
 <h1 th:text="${movieInfos.title}">$name</h1>
-<h3 th:text="${movieInfos.country}">$gender</h3>
-<a href="/">Go back</a>
+<ul>
+	<li th:text="${movieInfos.id}">id</li>
+	<li th:text="${movieInfos.year}">year</li>
+	<li th:text="${movieInfos.country}">country</li>
+	<li th:text="${movieInfos.director}">director</li>
+</ul>
+<div><img th:src="@{${movieInfos.posterUrl}}"/></div>
+<a href="/test">Go back</a>
 </body>
 </html>
