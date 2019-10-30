@@ -1,0 +1,55 @@
+* {
+  font-family: 'Metal Mania', cursive;
+}
+
+.quizz {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content: space-around;
+  height:270px;
+}
+
+label {
+  margin-right: 15px;
+  line-height: 32px;
+}
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+
+  border: 2px solid #999;
+  transition: 0.2s all linear;
+  margin-right: 5px;
+
+  position: relative;
+  top: 4px;
+}
+
+input:checked {
+  border: 6px solid black;
+}
+
+.question2, .question3, .send{
+    display:none;
+ }
+  
+#answer1:checked ~ .question2 {
+    display: block;
+ }
+
+#answer2:checked ~ .question3 {
+    display: block;
+  }
+
+#answer3:checked ~ .send {
+    display: block;
+    
+}
+
