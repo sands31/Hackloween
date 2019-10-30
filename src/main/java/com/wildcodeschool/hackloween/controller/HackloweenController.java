@@ -27,6 +27,21 @@ public class HackloweenController {
         return "test";
     }
     
+    @GetMapping("/test2")
+    public String test(Model model,
+    		@RequestParam(value="quizzMovie1", required=false) String answer1) {
+    	
+    	if (answer1.equals("1")) {
+    		String response= "You win !";
+    		model.addAttribute("response", response);
+    	} else {
+    		String response= "You loose !";
+    		model.addAttribute("response", response);
+    	}
+        return "test2";
+    }
+   
+    
     @GetMapping("/loose")
     public String loose() {
         return "loose";
