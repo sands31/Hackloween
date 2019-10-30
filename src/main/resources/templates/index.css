@@ -19,7 +19,7 @@ body {
   justify-content: center;
   align-items: center;
   align-content: flex-end;
-  margin-top: 16rem;
+  margin-top: 18rem;
 }
 
 .img {
@@ -29,7 +29,7 @@ body {
   justify-content: center;
   align-items: flex-end;
   align-content: flex-end;
-  margin-top: 15rem;
+  margin-top: 25rem;
 }
 
 
@@ -69,6 +69,8 @@ body {
   position: absolute;
   cursor: pointer;
   z-index: 99;
+  font-family: 'Metal Mania', cursive;
+  font-size: 2.5em;
 
 
 
@@ -208,7 +210,7 @@ body {
 
 a:link, a:visited
 {
-    color: white;
+    color: orange;
     text-decoration: none;
 }
 
