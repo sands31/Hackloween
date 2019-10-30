@@ -16,6 +16,10 @@ import reactor.core.publisher.Mono;
 public class HackloweenController {
 	
 	private static final String HACKLOWEEN_URL = "https://hackathon-wild-hackoween.herokuapp.com";
+	private static boolean hasWinRound1 = false;
+	private static boolean hasWinRound2 = false;
+	private static boolean hasWinRound3 = false;
+	private static boolean hasWinRound4 = false;
 
     @GetMapping("/")
     public String index() {
@@ -27,29 +31,55 @@ public class HackloweenController {
         return "quizz1";
     }
     
+    @GetMapping("/answerQuizz1")
+    public String answerQuizz1(Model model,
+    		@RequestParam(value="answer1", required=false) String answer1,
+    		@RequestParam(value="answer2", required=false) String answer2,
+    		@RequestParam(value="answer3", required=false) String answer3) {
+    	
+    	if (answer1.equals("2") && answer2.equals("1") && answer3.equals("2")) {
+    		hasWinRound1 = true;
+    		String response= "You win !";
+    		model.addAttribute("response", response);
+    		return "win";
+    	} else {
+    		String response= "You loose !";
+    		model.addAttribute("response", response);
+    		return "loose";
+    	}   	
+    	
+       
+    }
+    
+    
     @GetMapping("/test")
     public String test() {
         return "test";
     }
     
-    @GetMapping("/test2")
-    public String test(Model model,
-    		@RequestParam(value="quizzMovie1", required=false) String answer1) {
-    	
-    	if (answer1.equals("1")) {
-    		String response= "You win !";
-    		model.addAttribute("response", response);
-    	} else {
-    		String response= "You loose !";
-    		model.addAttribute("response", response);
-    	}
-        return "test2";
-    }
    
     
     @GetMapping("/loose")
-    public String loose() {
-        return "loose";
+    public String loose(Model model) {
+    	if (!hasWinRound1) {
+    		String response= "You loose at round 2!";
+    		model.addAttribute("response", response);
+    		return "test2";
+    	}
+    	else if (hasWinRound1 && !hasWinRound2) {
+    		String response= "You loose at round 2!";
+    		model.addAttribute("response", response);
+    		return "test2";
+    	} else if (hasWinRound1 && hasWinRound2 && !hasWinRound3) {
+    		String response= "You loose at round 3!";
+    		model.addAttribute("response", response);
+    		return "test2";
+    	} else if (hasWinRound1 && hasWinRound2 && !hasWinRound3 && !hasWinRound4) {
+    		String response= "You loose at round 4!";
+    		model.addAttribute("response", response);
+    		return "test2";
+    	}
+    	return "loose";
     }
     
     @GetMapping("/win")
