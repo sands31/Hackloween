@@ -1,13 +1,14 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Creation d'annonce</title>
   <link href="https://fonts.googleapis.com/css?family=Metal+Mania&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="win.css">
+
   <link rel="stylesheet" href="/CSS/styleFooter.css">
+  <link rel="stylesheet" href="win.css">
 </head>
 <body>
   <header>
@@ -36,25 +37,33 @@
         </nav>
   </header>
   <div class="jumbotron">
-    <button type="button" class="btn btn-outline-success">Success</button></br>
+    <button type="button" class="btn btn-outline-success" style="font-size: larger ;">Success</button></br>
     <h1 class="display-3">You Win BG</h1>
 
     <p class="lead">Tu ne sais jamais à quel point tu es fort jusqu'au jour où être fort reste la seule option</p>
     <hr class="my-4">
-    <p>La on sait jamais ça peux etre utile donc je garde</p>
+    <p>Tu as gagné tout les films disponibles cette semaine sur CAN YOU SURVIVE</p>
   </div>
   <div class="btn-group-vertical" data-toggle="buttons">
     <details>
       <summary type="button" class="btn btn-primary1">Film SCREAM</summary>
-        <p>Titre: Scream</p>
-        <p>Realisateur: Wes_Craven</p>
-        <p>Année: 1996</p>
-        <p>Pays: Etats Unies</p>
-        <div id='blogvision'>    <iframe src='http://player.allocine.fr/19551132.html' style='width:480px; height:270px'>    </iframe>    <br />    <a href="http://www.allocine.fr/film/fichefilm_gen_cfilm=11091.html" target="_blank" rel="noopener noreferrer"></a>    <br/>
+        <ul class="film1">
+          <li class="bg-dark" th:text="|Titre : ${movie1.title}|">Titre: Scream</li>
+          <li class="bg-dark" th:text="|Réalisateur : ${movie1.director}">Realisateur: Wes Craven</li>
+          <li class="bg-dark" th:text="|Année : ${movie1.year}|">Année: 1996</li>
+          <li class="bg-dark" th:text="|Pays : ${movie1.country}|">Pays: Etats Unies</li>
+        </ul>
+        <div id='blogvision'>    <iframe src='http://player.allocine.fr/19551132.html' style='width:480px; height:270px'>    </iframe>    <br />    <a href="http://www.allocine.fr/film/fichefilm_gen_cfilm=11091.html" target="_blank" rel="noopener noreferrer"></a>    <br/></div>
     </details>
     <details>
-      <summary type="button" class="btn btn-primary2">Film 2</summary>
-      <p>Description du Film</p>
+      <summary type="button" class="btn btn-primary2">Film Saw</summary>
+      <ul class="film1">
+          <li class="bg-dark">Titre: Saw</li>
+          <li class="bg-dark">Realisateur: James Wan</li>
+          <li class="bg-dark">Année: 2004</li>
+          <li class="bg-dark">Pays: Etats Unies</li>
+        </ul>
+        <div id='blogvision'>    <iframe src='http://player.allocine.fr/19151009.html' style='width:480px; height:270px'>    </iframe>    <br />    <a href="http://www.allocine.fr/film/fichefilm_gen_cfilm=170148.html" target="_blank" rel="noopener noreferrer"></a>    <br/></div>
     </details>
     <details>
       <summary type="button" class="btn btn-primary3">Film 3</summary>

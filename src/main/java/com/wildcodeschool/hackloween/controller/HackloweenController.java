@@ -20,6 +20,10 @@ public class HackloweenController {
 	private static boolean hasWinRound2 = false;
 	private static boolean hasWinRound3 = false;
 	private static boolean hasWinRound4 = false;
+	private Movie movie1 = movie(33);
+	private Movie movie2 = movie(52);
+	private Movie movie3 = movie(59);
+	private Movie movie4 = movie(20);
 
     @GetMapping("/")
     public String index() {
@@ -87,7 +91,11 @@ public class HackloweenController {
     }
     
     @GetMapping("/win")
-    public String win() {
+    public String win(Model model) {
+    	model.addAttribute("movie1", movie1);
+    	model.addAttribute("movie2", movie2);
+    	model.addAttribute("movie3", movie3);
+    	model.addAttribute("movie4", movie4);
         return "win";
     }
     

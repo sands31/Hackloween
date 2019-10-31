@@ -1,5 +1,5 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,10 +48,10 @@
     <details>
       <summary type="button" class="btn btn-primary1">Film SCREAM</summary>
         <ul class="film1">
-          <li class="bg-dark">Titre: Scream</li>
-          <li class="bg-dark">Realisateur: Wes Craven</li>
-          <li class="bg-dark">Année: 1996</li>
-          <li class="bg-dark">Pays: Etats Unies</li>
+          <li class="bg-dark" th:text="|Titre : ${movie1.title}|">Titre: Scream</li>
+          <li class="bg-dark" th:text="|Réalisateur : ${movie1.director}">Realisateur: Wes Craven</li>
+          <li class="bg-dark" th:text="|Année : ${movie1.year}|">Année: 1996</li>
+          <li class="bg-dark" th:text="|Pays : ${movie1.country}|">Pays: Etats Unies</li>
         </ul>
         <div id='blogvision'>    <iframe src='http://player.allocine.fr/19551132.html' style='width:480px; height:270px'>    </iframe>    <br />    <a href="http://www.allocine.fr/film/fichefilm_gen_cfilm=11091.html" target="_blank" rel="noopener noreferrer"></a>    <br/></div>
     </details>
