@@ -21,7 +21,7 @@ public class HackloweenController {
 	private static boolean hasWinRound3 = false;
 	private static boolean hasWinRound4 = false;
 	private Movie movie1 = movie(33);
-	private Movie movie2 = movie(52);
+	private Movie movie2 = movie(17);
 	private Movie movie3 = movie(59);
 	private Movie movie4 = movie(20);
 
