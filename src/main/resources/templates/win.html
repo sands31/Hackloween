@@ -20,13 +20,13 @@
           <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/">Accueil <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link" href="#">Prix</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#">A propos</a>
               </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -34,18 +34,21 @@
             </form>
           </div>
         </nav>
+        <audio autoplay >
+          <source src="sound/son_winner.mp3" type="audio/mpeg">
+          </audio>
   </header>
   <div class="jumbotron">
-    <button type="button" class="btn btn-outline-success" style="font-size: larger ;">Success</button></br>
-    <h1 class="display-3">You Win BG</h1>
+    <button type="button" class="btn btn-outline-success">Success</button></br>
+    <h1 class="display-3">Bravo tu as gagné !!</h1>
 
-    <p class="lead">Tu ne sais jamais à quel point tu es fort jusqu'au jour où être fort reste la seule option/Point Faible: trop fort !</p>
+    <h2 class="lead">Tu ne sais jamais à quel point tu es fort jusqu'au jour où être fort reste la seule option / Point Faible: trop fort !</h2>
     <hr class="my-4">
-    <p>Tu as gagné tout les films disponibles cette semaine sur <span class="can">CAN YOU SURVIVE</span></p>
+    <h3>Tu as gagné tout les films disponibles cette semaine sur <span class="can">CAN YOU SURVIVE</span></h3>
   </div>
   <div class="btn-group-vertical" data-toggle="buttons">
     <details>
-      <summary type="button" class="btn btn-primary1">Film SCREAM</summary>
+      <summary type="button" class="btn btn-primary1">SCREAM</summary>
         <ul class="film1">
           <li class="bg-dark" th:text="|Titre : ${movie1.title}|">Titre: Scream</li>
           <li class="bg-dark" th:text="|Réalisateur : ${movie1.director}">Realisateur: Wes Craven</li>
@@ -55,27 +58,48 @@
         <div id='blogvision'>    <iframe src='http://player.allocine.fr/19551132.html' style='width:480px; height:270px'>    </iframe>    <br />    <a href="http://www.allocine.fr/film/fichefilm_gen_cfilm=11091.html" target="_blank" rel="noopener noreferrer"></a>    <br/></div>
     </details>
     <details>
-      <summary type="button" class="btn btn-primary2">Film Saw</summary>
-      <ul class="film1">
-          <li class="bg-dark">Titre: Saw</li>
-          <li class="bg-dark">Realisateur: James Wan</li>
-          <li class="bg-dark">Année: 2004</li>
-          <li class="bg-dark">Pays: Etats Unies</li>
+      <summary type="button" class="btn btn-primary2">Saw</summary>
+        <ul class="film1">
+          <li class="bg-dark" th:text="|Titre : ${movie2.title}|">Titre: Saw</li>
+          <li class="bg-dark" th:text="|Réalisateur : ${movie2.director}">Realisateur: James Wan</li>
+          <li class="bg-dark" th:text="|Année : ${movie2.year}|">Année: 2004</li>
+          <li class="bg-dark" th:text="|Pays : ${movie2.country}|">Pays: Etats Unies</li>
         </ul>
         <div id='blogvision'>    <iframe src='http://player.allocine.fr/19151009.html' style='width:480px; height:270px'>    </iframe>    <br />    <a href="http://www.allocine.fr/film/fichefilm_gen_cfilm=170148.html" target="_blank" rel="noopener noreferrer"></a>    <br/></div>
     </details>
     <details>
-      <summary type="button" class="btn btn-primary3">Film 3</summary>
-      <p>Description du Film</p>
+      <summary type="button" class="btn btn-primary3">The Blair Witch Poject</summary>
+       <ul class="film1">
+          <li class="bg-dark" th:text="|Titre : ${movie3.title}|">Titre: The Blair Witch Project</li>
+          <li class="bg-dark" th:text="|Réalisateur : ${movie3.director}">Realisateur: Daniel_Myrick</li>
+          <li class="bg-dark" th:text="|Année : ${movie3.year}|">Année: 1999</li>
+          <li class="bg-dark" th:text="|Pays : ${movie3.country}|">Pays: USA</li>
+        </ul>
+      <div id='blogvision'>    <iframe src='http://player.allocine.fr/19376924.html' style='width:480px; height:270px'>    </iframe>    <br />    <a href="http://www.allocine.fr/film/fichefilm_gen_cfilm=20268.html" target="_blank" rel="noopener noreferrer"></a>  <br/>    <a href="http://www.allocine.fr/video/player_gen_cmedia=19376924&cfilm=20268.html"></a></div>
     </details>
     <details>
-      <summary type="button" class="btn btn-primary4">Film 4</summary>
-      <p>Description du Film</p>
+      <summary type="button" class="btn btn-primary4">The Exorcist</summary>
+      <ul class="film1">
+        <li class="bg-dark" th:text="|Titre : ${movie4.title}|">Titre: The Exorcist</li>
+        <li class="bg-dark" th:text="|Réalisateur : ${movie4.director}">Realisateur: Manuel Carballo</li>
+        <li class="bg-dark" th:text="|Année : ${movie4.year}|">Année: 2011</li>
+        <li class="bg-dark" th:text="|Pays : ${movie4.country}|">Pays: Spain</li>
+      </ul>
+      <div id='blogvision'>    <iframe src='http://player.allocine.fr/18370331.html' style='width:480px; height:270px'>    </iframe>    <br /></div>
     </details>
   </div>
   <footer>
       <p class="lead">
           <a type="button" class="btn btn-primary btn-lg" href="/" role="button">Play Again !</a>
+          <audio autoplay="false" id="beep" src="sound/cri.mp3">
+          </audio>
+          <input type="button" class="btn btn-primary btn-lg" value="Play Again !" onclick="JouerSon().href='/';"/>
+          <script>
+             function JouerSon() {
+                     var sound = document.getElementById("beep");
+                     sound.play();
+                 }
+          </script>
       </p>
 </footer>
 </body>
