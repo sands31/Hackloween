@@ -56,9 +56,9 @@ public class Fighter {
 	public String takeHit(Fighter name) {
 		this.life = this.life - name.getDamage();
 		if (this.life > 0) {
-			return (this.name + " has " + this.getLife() + " point remaining.");
+			return (this.name + " : " + this.getLife() + " points de vie restants");
 		} else
-			return (this.name + " is KO !");
+			return (" KO pour " + this.name + " !");
 	}
 
 		//Affichage alternatif takeHit()

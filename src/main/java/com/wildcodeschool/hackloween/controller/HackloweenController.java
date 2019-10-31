@@ -85,8 +85,7 @@ public class HackloweenController {
     	model.addAttribute("movie1", movie1);
     	model.addAttribute("movie2", movie2);
     	
-    	return "fight1Choice";
-    	
+    	return "fight1Choice";	
     }
     
     @GetMapping("/fight1/{num}")
@@ -135,7 +134,7 @@ public class HackloweenController {
     		@RequestParam(value="answer2", required=false) String answer2,
     		@RequestParam(value="answer3", required=false) String answer3) {
     	
-    	if (answer1.equals("2") && answer2.equals("1") && answer3.equals("2")) {
+    	if (answer1.equals("3") && answer2.equals("3") && answer3.equals("2")) {
     		String response= "Vous avez survécu !";
     		model.addAttribute("response", response);
     		return "quizz2won";
