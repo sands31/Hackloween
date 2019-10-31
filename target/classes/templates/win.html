@@ -38,7 +38,7 @@
         </nav>
         <audio autoplay >
           <source src="sound/son_winner.mp3" type="audio/mpeg">
-          </audio>
+         </audio>
   </header>
   <div class="jumbotron">
     <button type="button" class="btn btn-outline-success">Success</button></br>
@@ -68,7 +68,7 @@
           <li class="bg-dark" th:text="|Titre : ${movie2.title}|">Titre: Saw</li>
           <li class="bg-dark" th:text="|Réalisateur : ${movie2.director}">Realisateur: James Wan</li>
           <li class="bg-dark" th:text="|Année : ${movie2.year}|">Année: 2004</li>
-          <li class="bg-dark" th:text="|Pays : ${movie2.country}|">Pays: Etats Unies</li>
+          <li class="bg-dark" th:text="|Pays : ${movie2.country}|">Pays: Etats Unis</li>
         </ul>
         <div id='blogvision'>    <iframe src='http://player.allocine.fr/19151009.html' style='width:480px; height:270px'>    </iframe>    <br />    <a href="http://www.allocine.fr/film/fichefilm_gen_cfilm=170148.html" target="_blank" rel="noopener noreferrer"></a>    <br/></div>
     </details>
@@ -76,9 +76,9 @@
       <summary type="button" class="btn btn-primary3">The Blair Witch Poject</summary>
        <ul class="film1">
           <li class="bg-dark" th:text="|Titre : ${movie3.title}|">Titre: The Blair Witch Project</li>
-          <li class="bg-dark" th:text="|Réalisateur : ${movie3.director}">Realisateur: Daniel_Myrick</li>
+          <li class="bg-dark" th:text="|Réalisateur : ${movie3.director}">Réalisateur: Daniel_Myrick</li>
           <li class="bg-dark" th:text="|Année : ${movie3.year}|">Année: 1999</li>
-          <li class="bg-dark" th:text="|Pays : ${movie3.country}|">Pays: USA</li>
+          <li class="bg-dark" th:text="|Pays : ${movie3.country}|">Pays: Etats Unis</li>
         </ul>
       <div id='blogvision'>    <iframe src='http://player.allocine.fr/19376924.html' style='width:480px; height:270px'>    </iframe>    <br />    <a href="http://www.allocine.fr/film/fichefilm_gen_cfilm=20268.html" target="_blank" rel="noopener noreferrer"></a>  <br/>    <a href="http://www.allocine.fr/video/player_gen_cmedia=19376924&cfilm=20268.html"></a></div>
     </details>
@@ -86,9 +86,9 @@
       <summary type="button" class="btn btn-primary4">The Exorcist</summary>
       <ul class="film1">
         <li class="bg-dark" th:text="|Titre : ${movie4.title}|">Titre: The Exorcist</li>
-        <li class="bg-dark" th:text="|Réalisateur : ${movie4.director}">Realisateur: Manuel Carballo</li>
+        <li class="bg-dark" th:text="|Réalisateur : ${movie4.director}">Réalisateur: Manuel Carballo</li>
         <li class="bg-dark" th:text="|Année : ${movie4.year}|">Année: 2011</li>
-        <li class="bg-dark" th:text="|Pays : ${movie4.country}|">Pays: Spain</li>
+        <li class="bg-dark" th:text="|Pays : ${movie4.country}|">Pays: Espagne</li>
       </ul>
       <div id='blogvision'>    <iframe src='http://player.allocine.fr/18370331.html' style='width:480px; height:270px'>    </iframe>    <br /></div>
     </details>
@@ -96,10 +96,10 @@
   <footer>
       <p class="lead">
 
-          <a type="button" class="btn btn-primary btn-lg" href="/" role="button">Play Again !</a>
+          <a type="button" class="btn btn-primary btn-lg" href="/" role="button">Rejouer !</a>
           <audio autoplay="false" id="beep" src="sound/cri.mp3">
           </audio>
-          <input type="button" class="btn btn-primary btn-lg" value="Play Again !" onclick="JouerSon().href='/';"/>
+          <input type="button" class="btn btn-primary btn-lg" value="Rejouer !" onclick="JouerSon().href='/';"/>
           <script>
              function JouerSon() {
                      var sound = document.getElementById("beep");

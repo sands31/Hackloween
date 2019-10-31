@@ -59,5 +59,9 @@
             <img class="lock" th:src="@{${movie4.posterUrl}}" alt="">
         </div>
     </div>
+    <audio loop="true" hidden="true" autoplay>
+    	<source name="GoodEnough" src="sound/fight.mp3" type="audio/mp3">
+    </audio> 
+    <embed name="GoodEnough" src="sound/fight.mp3" loop="true" hidden="true" autostart="true">
 </body>
 </html>

@@ -4,7 +4,7 @@
 }
 
 body{
-    background: url(img/saw1.jpg) no-repeat center fixed;
+    background: url(img/exorciste.jpg) no-repeat center fixed;
     background-size: cover;
     margin-top:0px;
 }
@@ -12,15 +12,9 @@ body{
 
 .contain{
     display: flex;
-    flex-direction:row;
     align-items:center;
     justify-content: space-between;
     flex-wrap: wrap;
-}
-
-.quizz>h2, .quizz>a {
-	padding: 30px 0;	
-	color:red;
 }
 
 figure>a>img {
@@ -29,12 +23,10 @@ figure>a>img {
 
 .quizz {
   display:flex;
-  flex-direction:column;
+  flex-direction:row;
   justify-content: space-around;
-  align-items:center;
-  margin-left: 400px;
+  margin-left: 600px;
   width:60%;
-  font-size:1.5em;
 }
 
 .question2, .question3 {

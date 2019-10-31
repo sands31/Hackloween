@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Metal+Mania&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link type="text/css" rel="stylesheet" href="fight.css">
+    <link type="text/css" rel="stylesheet" href="/fight2.css">
 </head>
 <body>
     <header>
@@ -34,14 +34,13 @@
     
     <div class="contain">
         <h1 class="title">Quatrième univers: L'exorciste</h1>
-        <h2 th:text="|${monster.name}|"></h2>
-        <section class="quizz">            
-               <div class="question1">     
-					<ul>
-						<li class="fight-info" style="opacity = 0; display: none;" th:each="result : ${fightResult}" th:text="${result}"></li>
-					</ul>                   
-               </div>
-               	<a th:href="@{${linkFinal}}" >Continuer</a>
+        
+        <section class="quizz">     
+        	<h2 th:text="|${monster.name}|"></h2>   
+			<ul>
+				<li class="fight-info" style="opacity = 0; display: none;" th:each="result : ${fightResult}" th:text="${result}"></li>
+			</ul>                   
+            <a th:href="@{${linkFinal}}" >Continuer</a>
         </section>
         <div class="pictures">
             <p>Level 1</p>
@@ -53,7 +52,11 @@
             <p>Level 4</p>
             <img class="lock" th:src="@{${movie4.posterUrl}}" alt="">
         </div>
-    </div>
+    </div><audio loop="true" hidden="true" autoplay>
+    	<source name="GoodEnough" src="sound/fight.mp3" type="audio/mp3" loop="true">
+    </audio> 
+    <embed name="GoodEnough" src="sound/fight.mp3" loop="true" hidden="true" autostart="true">
+    
 </body>
 <script>
 	const listItems = []

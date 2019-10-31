@@ -137,10 +137,16 @@ public class HackloweenController {
     	if (answer1.equals("3") && answer2.equals("3") && answer3.equals("2")) {
     		String response= "Vous avez survécu !";
     		model.addAttribute("response", response);
+    		model.addAttribute("movie1", movie1);
+        	model.addAttribute("movie2", movie2);
+           	model.addAttribute("movie3", movie3);
+        	model.addAttribute("movie4", movie4);
     		return "quizz2won";
     	} else {
     		model.addAttribute("movie1", movie1);
         	model.addAttribute("movie2", movie2);
+           	model.addAttribute("movie3", movie3);
+        	model.addAttribute("movie4", movie4);
     		return "loose2";
     	}   	       
     }
