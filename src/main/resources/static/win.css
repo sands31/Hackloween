@@ -1,15 +1,11 @@
-* {
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box;
+body {
     color:white;
-    background-color:white;
     background: url(https://cdn.pixabay.com/photo/2018/01/31/07/36/secret-3120483_960_720.jpg) no-repeat center fixed;
     background-size: cover;
     font-family: 'Metal Mania', cursive;
 }
 h1{
-    color:#15ff00d5;
+    color:rgba(23, 201, 67, 0.835);
 }
 
 .display-3{
@@ -19,10 +15,17 @@ h1{
     text-align: center;
     width: 100%;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 1.5em;
 }
 .jumbotron{
     margin-bottom: 0px;
+    background: none;
+}
+h2{
+    text-align: center;
+}
+h3{
+    text-align: center;
 }
 p{
     text-align: center;
@@ -30,13 +33,14 @@ p{
 .my-sm-0{
     color: red;
     font-weight: bold;
+    font-size: 1.2em;
+    background: none;
 }
 .can{
     color: red;
 }
 .btn-group-vertical {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.658);
 }
 details{
     margin-left: auto;
@@ -61,16 +65,20 @@ footer{
     margin-top: 30px;
 }
 li{
-    color: tomato;
+    color: white;
     font-weight: bold;
+    font-size: 1.2;
 }
 details .btn {
     color: red;
     font-weight: bold;
+    font-size: 1.5em;
 }
-summary{
+summary,details ul{
     background-color: rgba(0, 0, 0, 0.658);
 }
-li{
-    background-color: rgba(0, 0, 0, 0.658);
+
+.bg-dark{
+    list-style-type: none;
+    background-color: rgba(0, 0, 0, 0) !important;   
 }
