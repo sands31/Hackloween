@@ -6,21 +6,67 @@
     background-color:white;
     background: url(https://cdn.pixabay.com/photo/2018/01/31/07/36/secret-3120483_960_720.jpg) no-repeat center fixed;
     background-size: cover;
+    font-family: 'Metal Mania', cursive;
 }
+h1{
+    color:#15ff00d5;
+}
+
 .display-3{
     text-align: center;
 }
 .btn-outline-success{
     text-align: center;
     width: 100%;
+    font-weight: bold;
+    font-size: 15px;
+}
+.jumbotron{
+    margin-bottom: 0px;
 }
 p{
     text-align: center;
 }
 .my-sm-0{
-    color: tomato;
+    color: red;
 }
-.btn-group-vertical{
+.btn-group-vertical {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.658);
+}
+details{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: black;
+    background-color: rgba(0, 0, 0, 0.658);
+}
+button{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.btn-group-vertical button{
+    color: black;
+    font-weight: bold;
+}
+footer{
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
+    margin-right: 30px;
+    margin-top: 30px;
+}
+li{
+    color: tomato;
+    font-weight: bold;
+}
+details .btn {
+    color: red;
+    font-weight: bold;
+}
+summary{
+    background-color: rgba(0, 0, 0, 0.658);
+}
+li{
+    background-color: rgba(0, 0, 0, 0.658);
 }

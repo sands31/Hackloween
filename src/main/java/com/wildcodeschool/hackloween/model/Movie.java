@@ -29,7 +29,7 @@ public class Movie {
 	}
 
 	public String getTitle() {
-		return title;
+		return title.replaceAll("_"," ");
 	}
 
 	public void setTitle(String title) {
@@ -45,7 +45,7 @@ public class Movie {
 	}
 
 	public String getCountry() {
-		return country;
+		return country.replaceAll("_"," ");
 	}
 
 	public void setCountry(String country) {
@@ -77,7 +77,7 @@ public class Movie {
 	}
 
 	public String getDirector() {
-		return director;
+		return director.replaceAll("_"," ");
 	}
 
 	public void setDirector(String director) {

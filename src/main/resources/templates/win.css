@@ -29,6 +29,10 @@ p{
 }
 .my-sm-0{
     color: red;
+    font-weight: bold;
+}
+.can{
+    color: red;
 }
 .btn-group-vertical {
     width: 100%;

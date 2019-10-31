@@ -20,6 +20,10 @@ public class HackloweenController {
 	private static boolean hasWinRound2 = false;
 	private static boolean hasWinRound3 = false;
 	private static boolean hasWinRound4 = false;
+	private Movie movie1 = movie(33);
+	private Movie movie2 = movie(52);
+	private Movie movie3 = movie(59);
+	private Movie movie4 = movie(20);
 
     @GetMapping("/")
     public String index() {
@@ -45,10 +49,14 @@ public class HackloweenController {
     	} else {
     		String response= "You loose !";
     		model.addAttribute("response", response);
-    		return "loose";
-    	}   	
-    	
-       
+    		return "loose1";
+    	}   	       
+    }
+    
+    @GetMapping("/fight1")
+    public String fight1(Model model) {
+    	model.addAttribute("movieInfos", movie(51));
+        return "fight1";
     }
     
     
@@ -79,17 +87,38 @@ public class HackloweenController {
     		model.addAttribute("response", response);
     		return "test2";
     	}
-    	return "loose";
+    	return "loose1";
     }
     
     @GetMapping("/win")
-    public String win() {
+    public String win(Model model) {
+    	model.addAttribute("movie1", movie1);
+    	model.addAttribute("movie2", movie2);
+    	model.addAttribute("movie3", movie3);
+    	model.addAttribute("movie4", movie4);
         return "win";
     }
     
     @GetMapping("/movies")
-    public String movies(Model model, @RequestParam Long id) {
-
+    public String movies(Model model, @RequestParam int id) {
+        model.addAttribute("movieInfos", movie(id));
+        return "movies";
+    }
+    
+    @GetMapping("/monsters")
+    public String monsters(Model model, @RequestParam int id) {
+        model.addAttribute("monsterInfos", monster(id));
+        return "monsters";
+    }
+    
+    /*@GetMapping("/monstersOne")
+    public String monsters(Model model, @RequestParam int id) {
+    	String thymleafName = "monster" + id;
+        model.addAttribute(thymleafName, monster(id));
+        return "monsters";
+    }*/
+    
+    public Movie movie(int id) { 	
         WebClient webClient = WebClient.create(HACKLOWEEN_URL);
         Mono<String> call = webClient.get()
                 .uri(uriBuilder -> uriBuilder
@@ -100,7 +129,6 @@ public class HackloweenController {
 
         String response = call.block();
         
-
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode actualObj = null;
         try {
@@ -116,16 +144,11 @@ public class HackloweenController {
         	movieObject = objectMapper.readValue(response, Movie.class);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
-        }
-
-        model.addAttribute("movieInfos", movieObject);
-
-        return "movies";
+        }   	
+    	return movieObject;
     }
     
-    @GetMapping("/monsters")
-    public String monsters(Model model, @RequestParam Long id) {
-
+    public Monster monster(int id) { 	
         WebClient webClient = WebClient.create(HACKLOWEEN_URL);
         Mono<String> call = webClient.get()
                 .uri(uriBuilder -> uriBuilder
@@ -153,9 +176,6 @@ public class HackloweenController {
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-
-        model.addAttribute("monsterInfos", monsterObject);
-
-        return "monsters";
+        return monsterObject;
     }
 }

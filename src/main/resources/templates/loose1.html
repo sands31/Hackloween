@@ -1,47 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<link rel="stylesheet" type="text/css" href="loose.css" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>loose</title>
 	<link href="https://fonts.googleapis.com/css?family=Metal+Mania&display=swap" rel="stylesheet">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="/CSS/styleFooter.css">
+  <link rel="stylesheet" type="text/css" href="loose.css" />
 </head>
 <body class="perdubody">
-	<header>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-         <img src="https://fontmeme.com/permalink/191030/7f30264607be6991697bf2b2a5bdb651.png">
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-           <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse" id="navbarColor02">
-           <ul class="navbar-nav mr-auto">
-             <li class="nav-item active">
-               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-             </li>
-             <li class="nav-item">
-               <a class="nav-link" href="#">Pricing</a>
-             </li>
-             <li class="nav-item">
-               <a class="nav-link" href="#">About</a>
-             </li>
-           </ul>
-           <form class="form-inline my-2 my-lg-0">
-             <button class="btn btn-secondary my-2 my-sm-0" type="submit">Quitter</button>
-           </form>
-         </div>
-       </nav>
-		<div>
-			<h2 class="failed">Failed !</h2>
-		</div>
-		<h1 class="perdutitle">
-		</h1>
-	</header>
-
-	<div class="perdu">
-		 <p>Game Over !</p>
-	</div>
-	<section class="tryagain">
-       <a class="button" href="quizz1.html">TRY AGAIN !</a>
-    </section>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <img class="navbar-brand" href="https://fontmeme.com/permalink/191030/7f30264607be6991697bf2b2a5bdb651.png" src="https://fontmeme.com/permalink/191030/7f30264607be6991697bf2b2a5bdb651.png">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarColor02">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit" href="/">Quitter</button>
+              </form>
+            </div>
+          </nav>
+    </header>
+    <h1 class="titre">GAME OVER !!</h1>
+    <blockquote class="blockquote">
+        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+      </blockquote>
+      <div class="btn-group-vertical" data-toggle="buttons">
+    <details>
+      <summary type="button" class="btn btn-primary1">Film SCREAM</summary>
+        <ul class="film1">
+          <li class="bg-dark" th:text="|Titre : ${movie1.title}|">Titre: Scream</li>
+          <li class="bg-dark" th:text="|Réalisateur : ${movie1.director}">Realisateur: Wes Craven</li>
+          <li class="bg-dark" th:text="|Année : ${movie1.year}|">Année: 1996</li>
+          <li class="bg-dark" th:text="|Pays : ${movie1.country}|">Pays: Etats Unies</li>
+        </ul>
+        <div id='blogvision'>    <iframe src='http://player.allocine.fr/19551132.html' style='width:480px; height:270px'>    </iframe>    <br />    <a href="http://www.allocine.fr/film/fichefilm_gen_cfilm=11091.html" target="_blank" rel="noopener noreferrer"></a>    <br/></div>
+    </details>
+    <details>
+      <summary type="button" class="btn btn-primary2">Film Saw</summary>
+      <ul class="film1">
+          <li class="bg-dark">Titre: Saw</li>
+          <li class="bg-dark">Realisateur: James Wan</li>
+          <li class="bg-dark">Année: 2004</li>
+          <li class="bg-dark">Pays: Etats Unies</li>
+        </ul>
+        <div id='blogvision'>    <iframe src='http://player.allocine.fr/19151009.html' style='width:480px; height:270px'>    </iframe>    <br />    <a href="http://www.allocine.fr/film/fichefilm_gen_cfilm=170148.html" target="_blank" rel="noopener noreferrer"></a>    <br/></div>
+    </details>
+    <details>
+      <summary type="button" class="btn btn-primary3">Film 3</summary>
+      <p>Description du Film</p>
+    </details>
+    <details>
+      <summary type="button" class="btn btn-primary4">Film 4</summary>
+      <p>Description du Film</p>
+    </details>
+  </div>
+  <footer>
+      <p class="lead">
+          <a type="button" class="btn btn-primary btn-lg" href="/" role="button">Play Again !</a>
+      </p>
+  </footer> 
 </body>
 </html>
