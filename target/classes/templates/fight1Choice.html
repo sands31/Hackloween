@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head>
-    <title>You succeed Level 1</title>
+    <title>Quizz1</title>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Metal+Mania&display=swap" rel="stylesheet"> 
+    <link type="text/css" rel="stylesheet" href="quizz1.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link type="text/css" rel="stylesheet" href="quizz1won.css">
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
                 </button>          <div class="collapse navbar-collapse" id="navbarColor02">
                   <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                      <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#">Pricing</a>
@@ -33,29 +33,31 @@
     </header>
     
     <div class="contain">
-        <h1 class="title">First Universe : SCREAM</h1>
-        <section class="congratulations">  
-            <p> Félicitations ! Vous venez de valider le premier niveau ! </p>
-            <h2>Les bonnes réponses étaient :</h2>   
-            <div class="goodAnswers">
-                <p> <b>Réponse 1 :</b> Un masque blanc et une cape noire</p>
-                <p> <b>Réponse 2 :</b> 4 chapitres </p>
-                <p> <b>Réponse 3 :</b> Billy Loomis et Stuart 'STU' Marker</p>
-            </div>   
-            <a href="/fight1Choice"><button type="submit" class="continue">Continuer l'aventure</button></a>         
+        <h1 class="title">Second Universe : SAW</h1>
+        <section class="quizz">
+        <figure>
+        	<a href="/fight1/1"><img th:src="@{${monster1.picture}}"/></a>
+        	<figcaption th:text="${monster1.name}"></figcaption>
+        </figure>
+        <figure>
+            <a href="/fight1/2"><img th:src="@{${monster2.picture}}"/></a>
+        	<figcaption th:text="${monster2.name}"></figcaption>        
+        </figure> 
+        <figure>
+            <a href="/fight1/3"><img th:src="@{${monster3.picture}}"/></a>
+        	<figcaption th:text="${monster3.name}"></figcaption>  
+        </figure>
         </section>
-        
         <div class="pictures">
             <p>Level 1</p>
-            <img class="scream" src="img/scream.jpg" alt="">
+            <img class="scream"th:src="@{${movie1.posterUrl}}" alt="">
             <p>Level 2</p>
-            <img class="lock" src="img/cadenas.png" alt="">
+            <img class="lock" th:src="@{${movie2.posterUrl}}" alt="">
             <p>Level 3</p>
             <img class="lock" src="img/cadenas.png" alt="">
             <p>Level 4</p>
             <img class="lock" src="img/cadenas.png" alt="">
         </div>
-        
     </div>
 </body>
 </html>

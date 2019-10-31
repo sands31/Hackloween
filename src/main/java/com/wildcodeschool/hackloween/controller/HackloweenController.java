@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
@@ -20,18 +21,19 @@ import reactor.core.publisher.Mono;
 public class HackloweenController {
 	
 	private static final String HACKLOWEEN_URL = "https://hackathon-wild-hackoween.herokuapp.com";
-	private static boolean hasWinRound1 = false;
-	private static boolean hasWinRound2 = false;
-	private static boolean hasWinRound3 = false;
-	private static boolean hasWinRound4 = false;
 	private Movie movie1 = movie(33);
 	private Movie movie2 = movie(17);
 	private Movie movie3 = movie(59);
 	private Movie movie4 = movie(20);
 	private Fighter you = new Fighter("You", 15);
-	private Monster monster1 = monster(20);
+	private Monster monster1 = monster(19);
+	private Monster monster2 = monster(8);
+	private Monster monster3 = monster(7);
 	private Fighter fighter1 = new Fighter(monster1.getName(), monster1.getAttack());
-	private Fighter[] fighters = {fighter1};
+	private Fighter fighter2 = new Fighter(monster2.getName(), monster2.getAttack());
+	private Fighter fighter3 = new Fighter(monster3.getName(), monster3.getAttack());
+	private Fighter[] fighters = {fighter1, fighter2, fighter3};
+	private Monster[] monsters = {monster1, monster2, monster3};
 
     @GetMapping("/")
     public String index() {
@@ -51,7 +53,6 @@ public class HackloweenController {
     		@RequestParam(value="answer3", required=false) String answer3) {
     	
     	if (answer1.equals("2") && answer2.equals("1") && answer3.equals("2")) {
-    		hasWinRound1 = true;
     		String response= "You win !";
     		model.addAttribute("response", response);
     		return "quizz1won";
@@ -62,71 +63,58 @@ public class HackloweenController {
     	}   	       
     }
     
-    @GetMapping("/fight1")
-    public String fight1(Model model) {
+    @GetMapping("/fight1Choice")
+    public String fight1Choice(Model model) {
+    	model.addAttribute("monster1", monster1);
+    	model.addAttribute("monster2", monster2);
+    	model.addAttribute("monster3", monster3);
+    	
+    	
+    	model.addAttribute("movie1", movie1);
+    	model.addAttribute("movie2", movie2);
+    	
+    	return "fight1Choice";
+    	
+    }
+    
+    @GetMapping("/fight1/{num}")
+    public String fight1(@PathVariable int num, Model model) {
     	//Combat
 		ArrayList<String> fightInfos = new ArrayList<String>();
-		/*fightInfos.add("Test1");
-		fightInfos.add("Test2");
-		fightInfos.add("Test3");
-		fightInfos.add("Test4");
-		fightInfos.add("Test5");
-		fightInfos.add("Test6");
-		fightInfos.add("Test7");
-		fightInfos.add("Test8");
-		fightInfos.add("Test9");*/
+		String linkState3 = new String();
 		fightInfos.add("The fight has begun !");
-		while (fighters[0].getLife() > 0 && you.getLife() > 0) {
-			fightInfos.add(fighters[0].takeHit(you));		
-			if (fighters[0].getLife() > 0) {
-				fightInfos.add(you.takeHit(fighters[0]));
+		while (fighters[num -1].getLife() > 0 && you.getLife() > 0) {
+			fightInfos.add(fighters[num -1].takeHit(you));		
+			if (fighters[num -1].getLife() > 0) {
+				fightInfos.add(you.takeHit(fighters[num -1]));
 			}
 		}
 		if (you.getLife() > 0) {
 			fightInfos.add("You win !");
+			linkState3  = "/quizz2";
 		} else {
 			fightInfos.add("You loose !");
+			linkState3  = "/loose1";
 		}
 		
-
+		model.addAttribute("linkState3", linkState3);
 		model.addAttribute("fightResult", fightInfos);
-    	model.addAttribute("monster1", monster1);
+    	model.addAttribute("monster", monsters[num -1]);
     	model.addAttribute("movie1", movie1);
     	model.addAttribute("movie2", movie2);
     	
         return "fight1";
     }
     
-    
-    @GetMapping("/test")
-    public String test() {
-        return "test";
+    @GetMapping("/quizz2")
+    public String quizz2(Model model) {
+    	model.addAttribute("movie1", movie1);
+    	model.addAttribute("movie2", movie2);
+    	model.addAttribute("movie3", movie3);
+    	model.addAttribute("movie4", movie4);
+        return "quizz2";
     }
     
-   
-    
-    @GetMapping("/loose")
-    public String loose(Model model) {
-    	if (!hasWinRound1) {
-    		String response= "You loose at round 2!";
-    		model.addAttribute("response", response);
-    		return "test2";
-    	}
-    	else if (hasWinRound1 && !hasWinRound2) {
-    		String response= "You loose at round 2!";
-    		model.addAttribute("response", response);
-    		return "test2";
-    	} else if (hasWinRound1 && hasWinRound2 && !hasWinRound3) {
-    		String response= "You loose at round 3!";
-    		model.addAttribute("response", response);
-    		return "test2";
-    	} else if (hasWinRound1 && hasWinRound2 && !hasWinRound3 && !hasWinRound4) {
-    		String response= "You loose at round 4!";
-    		model.addAttribute("response", response);
-    		return "test2";
-    	}
-    	return "loose1";
-    }
     
     @GetMapping("/win")
     public String win(Model model) {
@@ -136,6 +124,50 @@ public class HackloweenController {
     	model.addAttribute("movie4", movie4);
         return "win";
     }
+    
+    @GetMapping("/loose")
+    public String loose(Model model) {
+    	model.addAttribute("movie1", movie1);
+    	model.addAttribute("movie2", movie2);
+    	model.addAttribute("movie3", movie3);
+    	model.addAttribute("movie4", movie4);
+        return "loose";
+    }
+    
+    @GetMapping("/loose1")
+    public String loose1(Model model) {
+    	model.addAttribute("movie1", movie1);
+    	model.addAttribute("movie2", movie2);
+    	model.addAttribute("movie3", movie3);
+    	model.addAttribute("movie4", movie4);
+        return "loose1";
+    }
+    
+    
+    @GetMapping("/loose2")
+    public String loose2(Model model) {
+    	model.addAttribute("movie1", movie1);
+    	model.addAttribute("movie2", movie2);
+    	model.addAttribute("movie3", movie3);
+    	model.addAttribute("movie4", movie4);
+        return "loose2";
+    }
+    
+    @GetMapping("/loose3")
+    public String loose3(Model model) {
+    	model.addAttribute("movie1", movie1);
+    	model.addAttribute("movie2", movie2);
+    	model.addAttribute("movie3", movie3);
+    	model.addAttribute("movie4", movie4);
+        return "loose3";
+    }
+    
+    
+    @GetMapping("/test")
+    public String test() {
+        return "test";
+    }
+    
     
     @GetMapping("/movies")
     public String movies(Model model, @RequestParam int id) {
@@ -149,12 +181,6 @@ public class HackloweenController {
         return "monsters";
     }
     
-    /*@GetMapping("/monstersOne")
-    public String monsters(Model model, @RequestParam int id) {
-    	String thymleafName = "monster" + id;
-        model.addAttribute(thymleafName, monster(id));
-        return "monsters";
-    }*/
     
     public Movie movie(int id) { 	
         WebClient webClient = WebClient.create(HACKLOWEEN_URL);
