@@ -6,16 +6,11 @@
 .perdubody {
 
 	background-image: url("https://www.rochester.edu/newscenter/wp-content/uploads/2018/10/GettyImages-598748314.jpg");
-	background-repeat: no-repeat;
+	background-repeat: no-repeat center ;
+	background-attachment: fixed;
 	background-size: 100%;
 }
 
-.perdutitle {
-
-	color: orange;
-	text-align: center;
-	font-style:
-}
 .failed{
 	border: solid 1px red;
 	text-align: center;
@@ -28,7 +23,7 @@
 
 	margin-right: auto;
 	margin-left: auto;
-	color: orange;
+	color: white;
 	font-weight: bold;
 	font-size: 2em;
 	padding: 150px;
@@ -45,7 +40,8 @@
 	justify-content: center;
 	align-items: flex-end;
 	align-content: flex-end;
-	margin-top: 8rem;
+	margin-top: 4rem;
+	padding-bottom: 50px;
 }
 
 .stretch, .button:after, .button:before {
@@ -221,22 +217,20 @@ a:link, a:visited
    text-decoration: none;
 }
 
-details{
-   margin-left: auto;
-   margin-right: auto;
-   margin-top: 15px;
-   margin-bottom: 15px;
-   color: black;
-   background: black;
+.filmwon {
+
+	text-align: center;
+	padding-bottom: 100px;
+	color: red;
 }
 
-details p{
-   color:white;
-   font-weight: bold;
-   background: black;
-   opacity: 1;
+.filmwon2 {
+
+	text-align: center;
+	padding-bottom: 100px;
+	color: red;
 }
-details .btn {
-   color: red;
-   font-weight: bold;
+.btn-secondary{
+	color: red;
+	font-weight: bold;
 }
