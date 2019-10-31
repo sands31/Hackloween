@@ -23,9 +23,11 @@ public class HackloweenController {
 	private static final String HACKLOWEEN_URL = "https://hackathon-wild-hackoween.herokuapp.com";
 	private Movie movie1 = movie(33);
 	private Movie movie2 = movie(17);
-	private Movie movie3 = movie(59);
-	private Movie movie4 = movie(20);
-	private Fighter you = new Fighter("You", 15);
+	private Movie movie3 = movie(75);
+	private Movie movie4 = movie(43);
+	private Fighter you = new Fighter("Vous", 15);
+	
+	//Fight 1
 	private Monster monster1 = monster(19);
 	private Monster monster2 = monster(8);
 	private Monster monster3 = monster(7);
@@ -34,6 +36,16 @@ public class HackloweenController {
 	private Fighter fighter3 = new Fighter(monster3.getName(), monster3.getAttack());
 	private Fighter[] fighters = {fighter1, fighter2, fighter3};
 	private Monster[] monsters = {monster1, monster2, monster3};
+	
+	//Fight2
+	private Monster monster4 = monster(13);
+	private Monster monster5 = monster(1);
+	private Monster monster6 = monster(20);
+	private Fighter fighter4 = new Fighter(monster4.getName(), monster4.getAttack());
+	private Fighter fighter5 = new Fighter(monster5.getName(), monster5.getAttack());
+	private Fighter fighter6 = new Fighter(monster6.getName(), monster6.getAttack());
+	private Fighter[] fighters2 = {fighter4, fighter5, fighter6};
+	private Monster[] monsters2 = {monster4, monster5, monster6};
 
     @GetMapping("/")
     public String index() {
@@ -53,7 +65,7 @@ public class HackloweenController {
     		@RequestParam(value="answer3", required=false) String answer3) {
     	
     	if (answer1.equals("2") && answer2.equals("1") && answer3.equals("2")) {
-    		String response= "You win !";
+    		String response= "Vous avez survécu !";
     		model.addAttribute("response", response);
     		return "quizz1won";
     	} else {
@@ -82,7 +94,7 @@ public class HackloweenController {
     	//Combat
 		ArrayList<String> fightInfos = new ArrayList<String>();
 		String linkState3 = new String();
-		fightInfos.add("The fight has begun !");
+		fightInfos.add("Le combat a commencé !");
 		while (fighters[num -1].getLife() > 0 && you.getLife() > 0) {
 			fightInfos.add(fighters[num -1].takeHit(you));		
 			if (fighters[num -1].getLife() > 0) {
@@ -90,10 +102,10 @@ public class HackloweenController {
 			}
 		}
 		if (you.getLife() > 0) {
-			fightInfos.add("You win !");
+			fightInfos.add("Vous avez survécu !");
 			linkState3  = "/quizz2";
 		} else {
-			fightInfos.add("You loose !");
+			fightInfos.add("Vous n'avez pas survécu...");
 			linkState3  = "/loose1";
 		}
 		
@@ -106,6 +118,8 @@ public class HackloweenController {
         return "fight1";
     }
     
+    
+    
     @GetMapping("/quizz2")
     public String quizz2(Model model) {
     	model.addAttribute("movie1", movie1);
@@ -113,6 +127,70 @@ public class HackloweenController {
     	model.addAttribute("movie3", movie3);
     	model.addAttribute("movie4", movie4);
         return "quizz2";
+    }
+    
+    @GetMapping("/answerQuizz2")
+    public String answerQuizz2(Model model,
+    		@RequestParam(value="answer1", required=false) String answer1,
+    		@RequestParam(value="answer2", required=false) String answer2,
+    		@RequestParam(value="answer3", required=false) String answer3) {
+    	
+    	if (answer1.equals("2") && answer2.equals("1") && answer3.equals("2")) {
+    		String response= "Vous avez survécu !";
+    		model.addAttribute("response", response);
+    		return "quizz2won";
+    	} else {
+    		model.addAttribute("movie1", movie1);
+        	model.addAttribute("movie2", movie2);
+    		return "loose2";
+    	}   	       
+    }
+    
+    @GetMapping("/fight2Choice")
+    public String fight2Choice(Model model) {
+    	model.addAttribute("monster1", monster4);
+    	model.addAttribute("monster2", monster5);
+    	model.addAttribute("monster3", monster6);
+    	
+    	
+    	model.addAttribute("movie1", movie1);
+    	model.addAttribute("movie2", movie2);
+    	model.addAttribute("movie3", movie3);
+    	model.addAttribute("movie4", movie4);
+    	
+    	return "fight2Choice";
+    	
+    }
+    
+    @GetMapping("/fight2/{num}")
+    public String fight2(@PathVariable int num, Model model) {
+    	//Combat
+		ArrayList<String> fight2Infos = new ArrayList<String>();
+		String linkFinal = new String();
+		fight2Infos.add("Le combat a commencé !");
+		while (fighters2[num -1].getLife() > 0 && you.getLife() > 0) {
+			fight2Infos.add(fighters2[num -1].takeHit(you));		
+			if (fighters2[num -1].getLife() > 0) {
+				fight2Infos.add(you.takeHit(fighters2[num -1]));
+			}
+		}
+		if (you.getLife() > 0) {
+			fight2Infos.add("Vous avez survécu !");
+			linkFinal  = "/win";
+		} else {
+			fight2Infos.add("Vous n'avez pas survécu...");
+			linkFinal = "/loose3";
+		}
+		
+		model.addAttribute("linkFinal", linkFinal);
+		model.addAttribute("fightResult", fight2Infos);
+    	model.addAttribute("monster", monsters2[num -1]);
+    	model.addAttribute("movie1", movie1);
+    	model.addAttribute("movie2", movie2);
+    	model.addAttribute("movie3", movie3);
+    	model.addAttribute("movie4", movie4);
+    	
+        return "fight2";
     }
     
     
