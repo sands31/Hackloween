@@ -8,6 +8,10 @@
     background-size: cover;
     font-family: 'Metal Mania', cursive;
 }
+h1{
+    color:#15ff00d5;
+}
+
 .display-3{
     text-align: center;
 }
@@ -15,6 +19,7 @@
     text-align: center;
     width: 100%;
     font-weight: bold;
+    font-size: 15px;
 }
 .jumbotron{
     margin-bottom: 0px;
@@ -23,11 +28,11 @@ p{
     text-align: center;
 }
 .my-sm-0{
-    color: tomato;
+    color: red;
 }
 .btn-group-vertical {
     width: 100%;
-
+    background-color: rgba(0, 0, 0, 0.658);
 }
 details{
     margin-left: auto;
@@ -35,7 +40,7 @@ details{
     margin-top: 15px;
     margin-bottom: 15px;
     color: black;
-    background: black;
+    background-color: rgba(0, 0, 0, 0.658);
 }
 button{
     margin-top: 15px;
@@ -50,20 +55,18 @@ footer{
     justify-content: flex-end;
     margin-right: 30px;
     margin-top: 30px;
-
 }
-details p{
-    color:white;
+li{
+    color: tomato;
     font-weight: bold;
-    background: black;
-    opacity: 1;
 }
 details .btn {
     color: red;
     font-weight: bold;
 }
 summary{
-    background: black;
-    filter: alpha(opacity=10); 
-    opacity:0,5;
+    background-color: rgba(0, 0, 0, 0.658);
+}
+li{
+    background-color: rgba(0, 0, 0, 0.658);
 }
