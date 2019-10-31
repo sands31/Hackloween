@@ -4,32 +4,34 @@
     <title>Quizz1</title>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Metal+Mania&display=swap" rel="stylesheet"> 
-    <link type="text/css" rel="stylesheet" href="quizz1.css">
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="quizz1.css">
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a href="/"><img class="navbar-brand" href="https://fontmeme.com/permalink/191030/7f30264607be6991697bf2b2a5bdb651.png" src="https://fontmeme.com/permalink/191030/7f30264607be6991697bf2b2a5bdb651.png"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>          <div class="collapse navbar-collapse" id="navbarColor02">
-                  <ul class="navbar-nav mr-auto">
+            <a href="/"><img class="navbar-brand" href="https://fontmeme.com/permalink/191030/7f30264607be6991697bf2b2a5bdb651.png" src="https://fontmeme.com/permalink/191030/7f30264607be6991697bf2b2a5bdb651.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>          
+            <div class="collapse navbar-collapse" id="navbarColor02">
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                      <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Pricing</a>
+                        <a class="nav-link" href="#">Pricing</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="#">About</a>
                     </li>
-                  </ul>
-                  <form class="form-inline my-2 my-lg-0">
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
                     <button class="btn btn-secondary my-2 my-sm-0" type="submit">Quitter</button>
-                  </form>
-                </div>
-              </nav>
+                </form>
+            </div>
+        </nav>
     </header>
     
     <div class="contain">
@@ -64,7 +66,7 @@
         </section>
         <div class="pictures">
             <p>Level 1</p>
-            <img class="scream" th:src="@{${movie1.posterUrl}}" alt="">
+            <img class="scream" src="img/scream.jpg" alt="">
             <p>Level 2</p>
             <img class="lock" src="img/cadenas.png" alt="">
             <p>Level 3</p>

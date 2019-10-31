@@ -57,13 +57,11 @@
   }
   button {
       display: inline-block;
-      width: 200px;
+      width: 300px;
       padding: 8px;
       color: red;
       border: 2px solid #fff;
       text-align: center;
-      outline: none;
-      text-decoration: none;
       transition: background-color 0.2s ease-out,
                   color 0.2s ease-out;
     }
@@ -73,4 +71,14 @@
       color: #000;
       transition: background-color 0.3s ease-in,
                   color 0.3s ease-in;
+      box-shadow: 0 0.5em 0.5em -0.4em var(--hover) red;
+      transform: translateY(-0.25em);                  
+    }
+    .my-sm-0{
+      color: red;
+      font-weight: bold;
+      width:200px;
+    }
+    .continue{
+      font-size: 1.5em;
     }
