@@ -78,7 +78,7 @@ input:checked {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height:calc(100vh - 120px);
+    height:calc(100vh - 70px);
     margin-top: -100px;
 }
 

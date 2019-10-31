@@ -56,9 +56,9 @@ public class HackloweenController {
     		model.addAttribute("response", response);
     		return "quizz1won";
     	} else {
-    		String response= "You loose !";
-    		model.addAttribute("response", response);
-    		return "loose1";
+    		model.addAttribute("movie1", movie1);
+        	model.addAttribute("movie2", movie2);
+    		return "loose";
     	}   	       
     }
     

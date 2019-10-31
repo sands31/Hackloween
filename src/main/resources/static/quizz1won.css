@@ -4,8 +4,12 @@
   }
 
   body{
-    background: url(img/black.jpg) no-repeat center fixed;
+    background: url(img/background2.jpg) no-repeat center fixed;
     background-size: cover;
+  }
+
+  html{
+    height: 100%;
   }
 
 
@@ -13,7 +17,6 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-
 }
 
   .congratulations{
@@ -22,6 +25,7 @@
     justify-content: space-around;
     align-items: center;
     margin-left: 280px;
+    margin-top: 100px;
     width:80%;
   }
 
@@ -31,7 +35,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      height:calc(100vh - 120px);
+      height:calc(100vh - 70px);
       margin-top: -100px;
   }
   
@@ -43,22 +47,22 @@
   .title {
       width:100%;
       margin-top:50px;
+      margin-left:200px;
       text-align: center;
   }
   
   p {
       color:red;
       font-size:1.5em;
+      margin-bottom: 0;
   }
   button {
       display: inline-block;
-      width: 200px;
+      width: 300px;
       padding: 8px;
       color: red;
       border: 2px solid #fff;
       text-align: center;
-      outline: none;
-      text-decoration: none;
       transition: background-color 0.2s ease-out,
                   color 0.2s ease-out;
     }
@@ -68,4 +72,14 @@
       color: #000;
       transition: background-color 0.3s ease-in,
                   color 0.3s ease-in;
+      box-shadow: 0 0.5em 0.5em -0.4em var(--hover) red;
+      transform: translateY(-0.25em);                  
+    }
+    .my-sm-0{
+      color: red;
+      font-weight: bold;
+      width:200px;
+    }
+    .continue{
+      font-size: 1.5em;
     }
