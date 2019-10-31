@@ -4,7 +4,7 @@
 }
 
 body{
-    background: url(img/saw1.jpg) no-repeat center fixed;
+    background: url(saw1.jpg) no-repeat center fixed;
     background-size: cover;
     margin-top:0px;
 }
@@ -12,16 +12,21 @@ body{
 
 .contain{
     display: flex;
+    align-items:center;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+
+figure>a>img {
+	border-radius:30px;
 }
 
 .quizz {
   display:flex;
   flex-direction:row;
   justify-content: space-around;
-  margin-left: 400px;
-  width:100%;
+  margin-left: 600px;
+  width:60%;
 }
 
 .question2, .question3 {

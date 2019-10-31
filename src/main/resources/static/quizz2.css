@@ -3,22 +3,28 @@
   color:white;
 }
 
+body{
+    background: url(img/blairwitch.png) no-repeat center fixed;
+    background-size: cover;
+    margin-top:-100px;
+}
+
 
 .contain{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding-bottom: 50px;
-  	position:fixed;
-    top:60%;
-    right:20%;
-    height:40%;
-    overflow:auto;
-    
+    padding-bottom: 500px;
+  	margin-top:500px;
 }
 
-::-webkit-scrollbar {
-   display: block;
+.quizz {
+  display:flex;
+  flex-direction:column;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 280px;
+  width:80%;
 }
 
 .question2, .question3 {
@@ -72,11 +78,7 @@ input:checked {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height:calc(100vh - 50px);
-    margin-top:50px;
-    position:fixed;
-    top:0;
-    right:0;
+    height:calc(100vh - 120px);
 }
 
 .lock, .scream {
@@ -118,10 +120,3 @@ button {
     transition: background-color 0.3s ease-in,
                 color 0.3s ease-in;
   }
-  
-  body{
-    background: url(img/blairwitch.png) no-repeat center fixed;
-    background-size: cover;
-    margin-top:-100px;
-    overflow-y:auto;
-}
