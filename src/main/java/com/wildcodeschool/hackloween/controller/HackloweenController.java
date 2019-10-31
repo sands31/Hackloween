@@ -54,7 +54,7 @@ public class HackloweenController {
     		hasWinRound1 = true;
     		String response= "You win !";
     		model.addAttribute("response", response);
-    		return "win";
+    		return "quizz1won";
     	} else {
     		String response= "You loose !";
     		model.addAttribute("response", response);
@@ -66,16 +66,16 @@ public class HackloweenController {
     public String fight1(Model model) {
     	//Combat
 		ArrayList<String> fightInfos = new ArrayList<String>();
-		fightInfos.add("Test");
-		fightInfos.add("Test");
-		fightInfos.add("Test");
-		fightInfos.add("Test");
-		fightInfos.add("Test");
-		fightInfos.add("Test");
-		fightInfos.add("Test");
-		fightInfos.add("Test");
-		fightInfos.add("Test");
-		/*fightInfos.add("The fight has begun !");
+		/*fightInfos.add("Test1");
+		fightInfos.add("Test2");
+		fightInfos.add("Test3");
+		fightInfos.add("Test4");
+		fightInfos.add("Test5");
+		fightInfos.add("Test6");
+		fightInfos.add("Test7");
+		fightInfos.add("Test8");
+		fightInfos.add("Test9");*/
+		fightInfos.add("The fight has begun !");
 		while (fighters[0].getLife() > 0 && you.getLife() > 0) {
 			fightInfos.add(fighters[0].takeHit(you));		
 			if (fighters[0].getLife() > 0) {
@@ -86,7 +86,7 @@ public class HackloweenController {
 			fightInfos.add("You win !");
 		} else {
 			fightInfos.add("You loose !");
-		}*/
+		}
 		
 
 		model.addAttribute("fightResult", fightInfos);

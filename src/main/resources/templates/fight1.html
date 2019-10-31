@@ -10,7 +10,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <img class="navbar-brand" href="https://fontmeme.com/permalink/191030/7f30264607be6991697bf2b2a5bdb651.png" src="https://fontmeme.com/permalink/191030/7f30264607be6991697bf2b2a5bdb651.png">
+                <a href="/"><img class="navbar-brand" href="https://fontmeme.com/permalink/191030/7f30264607be6991697bf2b2a5bdb651.png" src="https://fontmeme.com/permalink/191030/7f30264607be6991697bf2b2a5bdb651.png"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>          <div class="collapse navbar-collapse" id="navbarColor02">
@@ -38,7 +38,7 @@
             <form method="GET" action="/answerQuizz1">
                 <div class="question1">     
 	                <ul>
-	                	<li th:each="var:${fightResult}"></li>
+	                	<li class="fight-info" style="opacity = 0; display: none;" th:each="result : ${fightResult}" th:text="${result}"></li>
 	                </ul>                   
                 </div>
             </form> 
@@ -55,4 +55,20 @@
         </div>
     </div>
 </body>
+<script>
+	const listItems = []
+
+		document.querySelectorAll('.fight-info').forEach((e, index) => {
+			e.style.opacity = 0
+			e.style.transition = "opacity .5s"
+			console.log(e.style.transitionDelay)
+			let a = 1000 * index
+			e.style.display = "block"
+			setTimeout(() => {
+				e.style.opacity = 1
+			}, a)
+		})
+	
+	
+</script>
 </html>
