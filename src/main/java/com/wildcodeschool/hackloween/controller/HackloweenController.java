@@ -3,8 +3,12 @@ package com.wildcodeschool.hackloween.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.wildcodeschool.hackloween.model.Fighter;
 import com.wildcodeschool.hackloween.model.Monster;
 import com.wildcodeschool.hackloween.model.Movie;
+
+import java.util.ArrayList;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +28,10 @@ public class HackloweenController {
 	private Movie movie2 = movie(17);
 	private Movie movie3 = movie(59);
 	private Movie movie4 = movie(20);
+	private Fighter you = new Fighter("You", 15);
+	private Monster monster1 = monster(20);
+	private Fighter fighter1 = new Fighter(monster1.getName(), monster1.getAttack());
+	private Fighter[] fighters = {fighter1};
 
     @GetMapping("/")
     public String index() {
@@ -56,7 +64,36 @@ public class HackloweenController {
     
     @GetMapping("/fight1")
     public String fight1(Model model) {
-    	model.addAttribute("movieInfos", movie(51));
+    	//Combat
+		ArrayList<String> fightInfos = new ArrayList<String>();
+		fightInfos.add("Test");
+		fightInfos.add("Test");
+		fightInfos.add("Test");
+		fightInfos.add("Test");
+		fightInfos.add("Test");
+		fightInfos.add("Test");
+		fightInfos.add("Test");
+		fightInfos.add("Test");
+		fightInfos.add("Test");
+		/*fightInfos.add("The fight has begun !");
+		while (fighters[0].getLife() > 0 && you.getLife() > 0) {
+			fightInfos.add(fighters[0].takeHit(you));		
+			if (fighters[0].getLife() > 0) {
+				fightInfos.add(you.takeHit(fighters[0]));
+			}
+		}
+		if (you.getLife() > 0) {
+			fightInfos.add("You win !");
+		} else {
+			fightInfos.add("You loose !");
+		}*/
+		
+
+		model.addAttribute("fightResult", fightInfos);
+    	model.addAttribute("monster1", monster1);
+    	model.addAttribute("movie1", movie1);
+    	model.addAttribute("movie2", movie2);
+    	
         return "fight1";
     }
     
