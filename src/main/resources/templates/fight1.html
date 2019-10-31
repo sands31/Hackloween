@@ -33,19 +33,21 @@
     </header>
     
     <div class="contain">
-        <h1 class="title">Second Universe : SCREAM</h1>
+        <h1 class="title">Second Universe : SAW</h1>
         <section class="quizz">            
             <form method="GET" action="/answerQuizz1">
-                <div class="question1">
-                   
+                <div class="question1">     
+	                <ul>
+	                	<li th:each="var:${fightResult}"></li>
+	                </ul>                   
                 </div>
             </form> 
         </section>
         <div class="pictures">
             <p>Level 1</p>
-            <img class="scream" src="img/scream.jpg" alt="">
+            <img class="scream"th:src="@{${movie1.posterUrl}}" alt="">
             <p>Level 2</p>
-            <img class="lock" th:src="@{${movieInfos.posterUrl}}" alt="">
+            <img class="lock" th:src="@{${movie2.posterUrl}}" alt="">
             <p>Level 3</p>
             <img class="lock" src="img/cadenas.png" alt="">
             <p>Level 4</p>
