@@ -31,7 +31,8 @@ public class HackloweenController {
     }
     
     @GetMapping("/quizz1")
-    public String quizz1() {
+    public String quizz1(Model model) {
+    	model.addAttribute("movie1", movie1);
         return "quizz1";
     }
     
