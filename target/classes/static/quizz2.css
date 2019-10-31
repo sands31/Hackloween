@@ -17,7 +17,9 @@
     
 }
 
-
+::-webkit-scrollbar {
+   display: block;
+}
 
 .question2, .question3 {
     margin-top: 50px;
