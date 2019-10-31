@@ -1,5 +1,12 @@
 * {
   font-family: 'Metal Mania', cursive;
+  color:white;
+}
+
+body{
+    background: url(img/background.jpg) no-repeat center fixed;
+    background-size: cover;
+    margin-top:-100px;
 }
 
 
@@ -14,6 +21,7 @@
   flex-direction:column;
   justify-content: space-around;
   align-items: center;
+  margin-left: 280px;
   width:80%;
 }
 
@@ -25,7 +33,7 @@
 label {
   margin-right: 25px;
   margin-left: 15px;
-  line-height: 32px;
+  line-height: 35px;
 }
 
 
@@ -38,14 +46,14 @@ input {
   width: 16px;
   height: 16px;
 
-  border: 2px solid #999;
+  border: 2px solid white;
 
   position: relative;
   top: 4px;
 }
 
 input:checked {
-  border: 6px solid black;
+  border: 6px solid red;
 }
 
 .question2, .question3, .send{
@@ -82,3 +90,32 @@ input:checked {
     margin-top:50px;
     text-align: center;
 }
+
+p {
+    color:red;
+    margin-top:0px;
+    margin-bottom: 0;
+}
+
+p, label {
+    font-size:1.5em;
+}
+button {
+    display: inline-block;
+    width: 200px;
+    padding: 8px;
+    color: red;
+    border: 2px solid #fff;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+    transition: background-color 0.2s ease-out,
+                color 0.2s ease-out;
+  }
+  button:hover,
+  button:active {
+    background-color: #fff;
+    color: #000;
+    transition: background-color 0.3s ease-in,
+                color 0.3s ease-in;
+  }
