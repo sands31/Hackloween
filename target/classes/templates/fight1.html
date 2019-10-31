@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head>
     <title>Quizz1</title>
     <meta charset="UTF-8">
@@ -33,32 +33,11 @@
     </header>
     
     <div class="contain">
-        <h1 class="title">First Universe : SCREAM</h1>
+        <h1 class="title">Second Universe : SCREAM</h1>
         <section class="quizz">            
             <form method="GET" action="/answerQuizz1">
                 <div class="question1">
-                    <h2>Quel est le déguisement utilisé dans la saga SCREAM ?</h2>
-                    <input type=radio id="answer1" name="answer1" value="1" ><label for="answer1">Un déguisement de squelette</label>
-                    <input type=radio id="answer1" name="answer1" value="2" ><label for="answer2">Un masque blanc et une cape noire</label>
-                    <input type=radio id="answer1" name="answer1" value="3" ><label for="answer3">Une citrouille</label>      
-                
-                    <div class="question2">
-                        <h2>Combien y a-t-il de chapitres dans la Saga SCREAM ?</h2>
-                        <input type="radio" id="answer2" name="answer2" value="1" ><label for="answer1"> 4</label>
-                        <input type="radio" id="answer2" name="answer2" value="2" ><label for="answer2"> 5</label>
-                        <input type="radio" id="answer2" name="answer2" value="3" ><label for="answer3"> 7</label>      
-                    
-                        <div class="question3">
-                            <h2>Dans Scream 1, qui sont les tueurs ?</h2>
-                            <input type="radio" id="answer3" name="answer3" value="1" ><label for="answer1">Tatum Riley</label>
-                            <input type="radio" id="answer3" name="answer3" value="2" ><label for="answer2">Billy Loomis & Stuart 'Stu' Marker</label>
-                            <input type="radio" id="answer3" name="answer3" value="3" ><label for="answer3">Neil Prescott</label> 
-                            <div class="send">
-                                <br>
-                                <button type=submit class="next">Suivant</button>
-                            </div>     
-                        </div>
-                    </div>
+                   
                 </div>
             </form> 
         </section>
@@ -66,7 +45,7 @@
             <p>Level 1</p>
             <img class="scream" src="img/scream.jpg" alt="">
             <p>Level 2</p>
-            <img class="lock" src="img/cadenas.png" alt="">
+            <img class="lock" th:src="@{${movieInfos.posterUrl}}" alt="">
             <p>Level 3</p>
             <img class="lock" src="img/cadenas.png" alt="">
             <p>Level 4</p>
