@@ -7,12 +7,12 @@
 <body>
 <h1 th:text="${monsterInfos.name}">$name</h1>
 <ul>
-	<li th:text="${monsterInfos.id}">id</li>
-	<li th:text="${monsterInfos.level}">level</li>
-	<li th:text="${monsterInfos.attack}">attack</li>
-	<li th:text="${monsterInfos.defense}">defense</li>
-	<li th:text="${monsterInfos.special}">special</li>
-	<li th:text="${monsterInfos.description}">description</li>
+	<li th:text="|id : ${monsterInfos.id}|">id</li>
+	<li th:text="|level : ${monsterInfos.level}|">level</li>
+	<li th:text="|attack : ${monsterInfos.attack}|">attack</li>
+	<li th:text="|defense : ${monsterInfos.defense}|">defense</li>
+	<li th:text="|special : ${monsterInfos.special}|">special</li>
+	<li th:text="|description : ${monsterInfos.description}|">description</li>
 </ul>
 <div><img th:src="@{${monsterInfos.picture}}"/></div>
 
