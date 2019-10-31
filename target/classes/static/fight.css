@@ -4,7 +4,7 @@
 }
 
 body{
-    background: url(saw1.jpg) no-repeat center fixed;
+    background: url(img/saw1.jpg) no-repeat center fixed;
     background-size: cover;
     margin-top:0px;
 }
@@ -12,6 +12,7 @@ body{
 
 .contain{
     display: flex;
+    flex-direction:row;
     align-items:center;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -23,9 +24,10 @@ figure>a>img {
 
 .quizz {
   display:flex;
-  flex-direction:row;
+  flex-direction:column;
   justify-content: space-around;
-  margin-left: 600px;
+  align-items:center;
+  margin-left: 400px;
   width:60%;
 }
 
