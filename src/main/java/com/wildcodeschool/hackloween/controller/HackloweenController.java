@@ -90,8 +90,8 @@ public class HackloweenController {
     public String fight1(@PathVariable int num, Model model) {
   
       	//Reset life
+    	you.setLife(100);
     	for (int i=0; i<3; i++) {
-	    	you.setLife(100);
 	    	fighters[i].setLife(100);
     	}
     	
@@ -172,8 +172,8 @@ public class HackloweenController {
     @GetMapping("/fight2/{num}")
     public String fight2(@PathVariable int num, Model model) {
       	//Reset life
+    	you.setLife(100);
     	for (int i=0; i<3; i++) {
-	    	you.setLife(100);
 	    	fighters[i].setLife(100);
     	}
     	
