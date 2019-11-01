@@ -1,122 +1,86 @@
 * {
-  font-family: 'Metal Mania', cursive;
-  color:white;
-}
-
-body{
-    background: url(img/blairwitch.png) no-repeat center fixed;
-    background-size: cover;
-    margin-top:-100px;
-}
-
-
-.contain{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding-bottom: 500px;
-  	margin-top:500px;
-}
-
-.quizz {
-  display:flex;
-  flex-direction:column;
-  justify-content: space-around;
-  align-items: center;
-  margin-left: 280px;
-  width:80%;
-}
-
-.question2, .question3 {
-    margin-top: 50px;
-    margin-bottom:50px;
-}
-
-label {
-  margin-right: 25px;
-  margin-left: 15px;
-  line-height: 35px;
-}
-
-
-input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-
-  border-radius: 50%;
-  width: 16px;
-  height: 16px;
-
-  border: 2px solid white;
-
-  position: relative;
-  top: 4px;
-}
-
-input:checked {
-  border: 6px solid red;
-}
-
-.question2, .question3, .send{
-    display:none;
- }
-  
-#answer1:checked ~ .question2 {
-    display: block;
- }
-
-#answer2:checked ~ .question3 {
-    display: block;
-  }
-
-#answer3:checked ~ .send {
-    display: block;
-}
-
-.pictures {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height:calc(100vh - 120px);
-}
-
-.lock, .scream {
-    width:100px;
-    height:auto;
-}
-
-.title {
-    width:100%;
-    margin-top:50px;
-    text-align: center;
-}
-
-p {
-    color:red;
-    margin-top:0px;
-    margin-bottom: 0;
-}
-
-p, label {
-    font-size:1.5em;
+ font-family: 'Metal Mania', cursive;
+ color:white;
+}.contain{
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   padding-bottom: 50px;
+     position:fixed;
+   top:60%;
+   right:20%;
+   height:40%;
+   overflow:auto;}.question2, .question3 {
+   margin-top: 50px;
+   margin-bottom:50px;
+}label {
+ margin-right: 25px;
+ margin-left: 15px;
+ line-height: 35px;
+}input {
+ -webkit-appearance: none;
+ -moz-appearance: none;
+ appearance: none;  border-radius: 50%;
+ width: 16px;
+ height: 16px;  border: 2px solid white;  position: relative;
+ top: 4px;
+}input:checked {
+ border: 6px solid red;
+}.question2, .question3, .send{
+   display:none;
+}#answer1:checked ~ .question2 {
+   display: block;
+}#answer2:checked ~ .question3 {
+   display: block;
+ }#answer3:checked ~ .send {
+   display: block;
+}.pictures {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   height:calc(100vh - 50px);
+   margin-top:50px;
+   position:fixed;
+   top:0;
+   right:0;
+}.lock, .scream {
+   width:100px;
+   height:auto;
+}.title {
+   width:100%;
+   margin-top:50px;
+   text-align: center;
+}p {
+   color:red;
+   margin-top:0px;
+   margin-bottom: 0;
+}p, label {
+   font-size:1.5em;
 }
 button {
-    display: inline-block;
-    width: 200px;
-    padding: 8px;
-    color: red;
-    border: 2px solid #fff;
-    text-align: center;
-    outline: none;
-    text-decoration: none;
-    transition: background-color 0.2s ease-out,
-                color 0.2s ease-out;
-  }
-  button:hover,
-  button:active {
-    background-color: #fff;
-    color: #000;
-    transition: background-color 0.3s ease-in,
-                color 0.3s ease-in;
-  }
+   display: inline-block;
+   width: 200px;
+   padding: 8px;
+   color: red;
+   border: 2px solid #fff;
+   text-align: center;
+   outline: none;
+   text-decoration: none;
+   transition: background-color 0.2s ease-out,
+               color 0.2s ease-out;
+ }
+ button:hover,
+ button:active {
+   background-color: #fff;
+   color: #000;
+   transition: background-color 0.3s ease-in,
+               color 0.3s ease-in;
+ }  body{
+   background: url(img/blairwitch.png) no-repeat center fixed;
+   background-size: cover;
+   margin-top:-100px;
+   overflow-y:auto;
+}
+::-webkit-scrollbar {
+   display: block;
+}

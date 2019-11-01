@@ -170,6 +170,7 @@ public class HackloweenController {
     @GetMapping("/fight2/{num}")
     public String fight2(@PathVariable int num, Model model) {
     	//Combat
+    	you.setLife(100);
 		ArrayList<String> fight2Infos = new ArrayList<String>();
 		String linkFinal = new String();
 		fight2Infos.add("Le combat a commencé !");
