@@ -10,12 +10,6 @@ public class Movie {
 	private String posterUrl;
 	private String createdAt;
 	private String updatedAt;
-	/*
-	 {"id":3,"title":"Scream_2",
-	 "director":"Wes_Craven","year":1997,"country":"United_States",
-	 "posterUrl":"https://nsa40.casimages.com/img/2019/10/07/191007035836534706.jpg",
-	 "createdAt":"2019-10-27T08:55:47.432Z","updatedAt":"2019-10-27T08:55:47.432Z"}
-	 */
 	
     public Movie() {
     }

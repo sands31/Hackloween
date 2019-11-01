@@ -69,8 +69,6 @@ public class HackloweenController {
     		model.addAttribute("response", response);
     		return "quizz1won";
     	} else {
-    		model.addAttribute("movie1", movie1);
-        	model.addAttribute("movie2", movie2);
     		return "loose";
     	}   	       
     }
@@ -91,6 +89,7 @@ public class HackloweenController {
     @GetMapping("/fight1/{num}")
     public String fight1(@PathVariable int num, Model model) {
     	//Combat
+    	you.setLife(100);
 		ArrayList<String> fightInfos = new ArrayList<String>();
 		String linkState3 = new String();
 		fightInfos.add("Le combat a commencé !");
@@ -134,19 +133,16 @@ public class HackloweenController {
     		@RequestParam(value="answer2", required=false) String answer2,
     		@RequestParam(value="answer3", required=false) String answer3) {
     	
+			model.addAttribute("movie1", movie1);
+	    	model.addAttribute("movie2", movie2);
+	       	model.addAttribute("movie3", movie3);
+	    	model.addAttribute("movie4", movie4);
+    	
     	if (answer1.equals("3") && answer2.equals("3") && answer3.equals("2")) {
     		String response= "Vous avez survécu !";
     		model.addAttribute("response", response);
-    		model.addAttribute("movie1", movie1);
-        	model.addAttribute("movie2", movie2);
-           	model.addAttribute("movie3", movie3);
-        	model.addAttribute("movie4", movie4);
     		return "quizz2won";
     	} else {
-    		model.addAttribute("movie1", movie1);
-        	model.addAttribute("movie2", movie2);
-           	model.addAttribute("movie3", movie3);
-        	model.addAttribute("movie4", movie4);
     		return "loose2";
     	}   	       
     }
