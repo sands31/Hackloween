@@ -174,7 +174,7 @@ public class HackloweenController {
       	//Reset life
     	you.setLife(100);
     	for (int i=0; i<3; i++) {
-	    	fighters[i].setLife(100);
+	    	fighters2[i].setLife(100);
     	}
     	
     	//Fight
