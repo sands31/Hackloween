@@ -88,8 +88,14 @@ public class HackloweenController {
     
     @GetMapping("/fight1/{num}")
     public String fight1(@PathVariable int num, Model model) {
-    	//Combat
-    	you.setLife(100);
+  
+      	//Reset life
+    	for (int i=0; i<3; i++) {
+	    	you.setLife(100);
+	    	fighters[i].setLife(100);
+    	}
+    	
+    	//Fight
 		ArrayList<String> fightInfos = new ArrayList<String>();
 		String linkState3 = new String();
 		fightInfos.add("Le combat a commencé !");
@@ -165,7 +171,13 @@ public class HackloweenController {
     
     @GetMapping("/fight2/{num}")
     public String fight2(@PathVariable int num, Model model) {
-    	//Combat
+      	//Reset life
+    	for (int i=0; i<3; i++) {
+	    	you.setLife(100);
+	    	fighters[i].setLife(100);
+    	}
+    	
+    	//Fight
     	you.setLife(100);
 		ArrayList<String> fight2Infos = new ArrayList<String>();
 		String linkFinal = new String();
